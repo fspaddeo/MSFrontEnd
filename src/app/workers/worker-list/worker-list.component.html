@@ -6,9 +6,9 @@
     <ng-container content>
       <div class="workers-container">
         <div *ngFor="let worker of workers; let index= index" class="worker-container">
-          
+
             <a *ngIf="worker.image.length > 0; else emptyImage">
-              <img src="" alt="Poster"/>
+              <img src="worker.image" alt="Poster"/>
             </a>
             <ng-template #emptyImage>
               <img src="https://icon-library.com/images/generic-person-icon/generic-person-icon-17.jpg" alt="Poster"/>

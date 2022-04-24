@@ -10,6 +10,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MaterialModule} from './material/material.module';
 import { MenuComponent } from './menu/menu.component';
 import { RatingComponent } from './utilities/rating/rating.component';
+import { HomeComponent } from './home/home.component';
+import { IndexCandidateComponent } from './candidates/index-candidate/index-candidate.component';
+import { CreateSkillComponent } from './skills/create-skill/create-skill.component';
+import { IndexSkillsComponent } from './skills/index-skills/index-skills.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,11 @@ import { RatingComponent } from './utilities/rating/rating.component';
     WorkerListComponent,
     GenericListComponent,
     MenuComponent,
-    RatingComponent
+    RatingComponent,
+    HomeComponent,
+    IndexSkillsComponent,
+    IndexCandidateComponent,
+    CreateSkillComponent,
   ],
   imports: [
     BrowserModule,
