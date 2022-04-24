@@ -4,7 +4,7 @@
     </ng-container>
     
     <ng-container content>
-        <div *ngFor="let worker  of workers; let index= index" class="item-container">
+        <div *ngFor="let worker  of workers; let index= index" class="worker-container">
             <div>
               {{index}}) {{worker.name | uppercase}}
               <button style="margin-left: 1rem;" (click)="remove(index)">Remove</button>

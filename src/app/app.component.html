@@ -1,7 +1,10 @@
-<h1>{{title}}</h1>
+<app-menu></app-menu>
 
-<h2>Juniors</h2>
-<app-worker-list [workers]="juniorWorkers"></app-worker-list>
+<div class="container">
+  <h2>Juniors</h2>
+  <app-worker-list [workers]="juniorWorkers"></app-worker-list>
+  
+  <h2>Seniors</h2>
+  <app-worker-list [workers]="seniorWorkers"></app-worker-list>
 
-<h2>Seniors</h2>
-<app-worker-list [workers]="seniorWorkers"></app-worker-list>
+</div>
