@@ -4,18 +4,29 @@
     </ng-container>
     
     <ng-container content>
-        <div *ngFor="let worker  of workers; let index= index" class="worker-container">
+      <div class="workers-container">
+        <div *ngFor="let worker of workers; let index= index" class="worker-container">
+          
+            <a *ngIf="worker.image.length > 0; else emptyImage">
+              <img src="" alt="Poster"/>
+            </a>
+            <ng-template #emptyImage>
+              <img src="https://icon-library.com/images/generic-person-icon/generic-person-icon-17.jpg" alt="Poster"/>
+            </ng-template>
+            
+            <p>
+              <a>{{worker.name}}</a>
+            </p>
             <div>
-              {{index}}) {{worker.name | uppercase}}
-              <button style="margin-left: 1rem;" (click)="remove(index)">Remove</button>
-            </div>
-            <div>
-              {{worker.birth | date:"dd-mm-YYYY"}}
-            </div>
-            <div>
-              {{worker.salary | currency:"$"}}
+              <a mat-flat-button color="primary">
+                Edit
+              </a>
+              <button mat-flat-button color="warn" type="button">
+                Delete
+              </button>
             </div>
           </div>
+      </div>
     </ng-container>
 </app-generic-list>
 

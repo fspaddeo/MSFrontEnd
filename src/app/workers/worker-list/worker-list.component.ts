@@ -10,10 +10,9 @@ export class WorkerListComponent implements OnInit {
   constructor() { }
 
   @Input()
-  workers!: { name: string; birth: number; salary: number; }[];
+  workers!: { name: string; birth: number; salary: number; image: string; }[];
 
   ngOnInit(): void {
-    
   }
 
   remove(index: number){

@@ -1,6 +1,6 @@
 <app-menu></app-menu>
-<app-rating></app-rating>
-<!--
+<!--<app-rating (onRating)="handleRating($event)"></app-rating>-->
+
 <div class="container">
   <h2>Juniors</h2>
   <app-worker-list [workers]="juniorWorkers"></app-worker-list>
@@ -8,4 +8,4 @@
   <h2>Seniors</h2>
   <app-worker-list [workers]="seniorWorkers"></app-worker-list>
 
-</div>-->
+</div>
