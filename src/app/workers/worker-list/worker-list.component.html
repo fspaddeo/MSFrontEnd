@@ -1,0 +1,17 @@
+<img *ngIf="!workers" src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"/>
+<div *ngIf="workers?.length ===0">
+  There are no movies
+</div>
+
+
+<div *ngFor="let worker of workers; let index= index" class="worker-container">
+  <div>
+    {{index}}) {{worker.name | uppercase}}
+  </div>
+  <div>
+    {{worker.birth | date:"dd-mm-YYYY"}}
+  </div>
+  <div>
+    {{worker.salary | currency:"$"}}
+  </div>
+</div>
