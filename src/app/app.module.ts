@@ -14,6 +14,8 @@ import { HomeComponent } from './home/home.component';
 import { IndexCandidateComponent } from './candidates/index-candidate/index-candidate.component';
 import { CreateSkillComponent } from './skills/create-skill/create-skill.component';
 import { IndexSkillsComponent } from './skills/index-skills/index-skills.component';
+import { EditWorkerComponent } from './workers/edit-worker/edit-worker.component';
+import { CreateWorkerComponent } from './workers/create-worker/create-worker.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { IndexSkillsComponent } from './skills/index-skills/index-skills.compone
     IndexSkillsComponent,
     IndexCandidateComponent,
     CreateSkillComponent,
+    EditWorkerComponent,
+    CreateWorkerComponent,
   ],
   imports: [
     BrowserModule,
