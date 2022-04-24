@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
       salary: 1300
     }];
 
-    this.seniorWorkers =[{
+    /*this.seniorWorkers =[{
       name : 'Spiderman',
       birth: Date.now(),
       salary: 4000
@@ -38,7 +38,7 @@ export class AppComponent implements OnInit {
       name : 'Fantastic beasts',
       birth: Date.now(),
       salary: 3300
-    }];
+    }];*/
     
   }
   juniorWorkers!: { name: string; birth: number; salary: number; }[];

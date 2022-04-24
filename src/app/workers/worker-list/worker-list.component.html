@@ -1,17 +1,21 @@
-<img *ngIf="!workers" src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"/>
-<div *ngIf="workers?.length ===0">
-  There are no movies
-</div>
+<app-generic-list [list]="workers">
+    <ng-container loading>
+        This is loading...
+    </ng-container>
+    
+    <ng-container content>
+        <div *ngFor="let worker  of workers; let index= index" class="item-container">
+            <div>
+              {{index}}) {{worker.name | uppercase}}
+              <button style="margin-left: 1rem;" (click)="remove(index)">Remove</button>
+            </div>
+            <div>
+              {{worker.birth | date:"dd-mm-YYYY"}}
+            </div>
+            <div>
+              {{worker.salary | currency:"$"}}
+            </div>
+          </div>
+    </ng-container>
+</app-generic-list>
 
-
-<div *ngFor="let worker of workers; let index= index" class="worker-container">
-  <div>
-    {{index}}) {{worker.name | uppercase}}
-  </div>
-  <div>
-    {{worker.birth | date:"dd-mm-YYYY"}}
-  </div>
-  <div>
-    {{worker.salary | currency:"$"}}
-  </div>
-</div>

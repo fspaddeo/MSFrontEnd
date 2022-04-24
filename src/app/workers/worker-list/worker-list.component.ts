@@ -8,12 +8,16 @@ import { Component, Input, OnInit } from '@angular/core';
 export class WorkerListComponent implements OnInit {
 
   constructor() { }
-  
+
   @Input()
   workers!: { name: string; birth: number; salary: number; }[];
 
   ngOnInit(): void {
     
+  }
+
+  remove(index: number){
+    this.workers.splice(index, 1);
   }
 
 }
