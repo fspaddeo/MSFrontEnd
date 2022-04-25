@@ -12,4 +12,9 @@
             <mat-option *ngFor="let city of cities" [value]="city.id">{{city.name}}</mat-option>
         </mat-select>
     </mat-form-field>
+    <div>
+        <button mat-flat-button (click)="clearForm()" color="warn">Pulisci</button>
+    </div>
 </form>
+
+<app-worker-list [workers]="workers"></app-worker-list>
