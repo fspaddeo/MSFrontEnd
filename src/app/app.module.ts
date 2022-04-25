@@ -19,6 +19,7 @@ import { EditWorkerComponent } from './workers/edit-worker/edit-worker.component
 import { CreateWorkerComponent } from './workers/create-worker/create-worker.component';
 import { FormSkillComponent } from './skills/form-skill/form-skill.component';
 import { EditSkillComponent } from './skills/edit-skill/edit-skill.component';
+import { WorkerFilterComponent } from './workers/worker-filter/worker-filter.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { EditSkillComponent } from './skills/edit-skill/edit-skill.component';
     CreateWorkerComponent,
     FormSkillComponent,
     EditSkillComponent,
+    WorkerFilterComponent,
   ],
   imports: [
     BrowserModule,

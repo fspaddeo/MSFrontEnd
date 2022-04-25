@@ -1,0 +1,15 @@
+<h2>Cerca dipendenti</h2>
+
+<form [formGroup]="form">
+    <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input formControlName="name" matInput/>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Città</mat-label>
+        <mat-select formControlName="birthPlace">
+            <mat-option *ngFor="let city of cities" [value]="city.id">{{city.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</form>
