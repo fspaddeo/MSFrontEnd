@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { WorkerListComponent } from './workers/worker-list/worker-list.component';
 import { GenericListComponent } from './utilities/generic-list/generic-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {ReactiveFormsModule} from '@angular/forms'
 
 import {MaterialModule} from './material/material.module';
 import { MenuComponent } from './menu/menu.component';
@@ -35,7 +36,8 @@ import { CreateWorkerComponent } from './workers/create-worker/create-worker.com
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

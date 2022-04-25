@@ -1,3 +1,13 @@
 <h2>Crea skill</h2>
 
-<button mat-flat-button color="primary" type="button" (click)="saveChanges()">Salva</button>
+<form (submit)="saveChanges()" [formGroup]="form">
+    <mat-form-field appearance=outline>
+        <mat-label>Nome </mat-label>
+        <input formControlName="name" matInput >
+        <mat-error *ngIf="form.invalid">{{getErrorMessageFieldName()}}</mat-error>
+    </mat-form-field>
+    <div>
+        <button mat-flat-button color="primary" type="button" [disabled]="form.invalid">Salva</button>
+        <a mat-stroked-button routerLink="/skills">Cancel</a>
+    </div>
+</form>
