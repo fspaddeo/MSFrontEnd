@@ -10,21 +10,21 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.juniorWorkers =[{
       name : 'Spiderman',
-      birth: Date.now(),
+      dateOfBirth: new Date(),
       salary: 1000,
       birthPlace: 'Cagliari',
       image: "",
     },
     {
       name : 'Moana',
-      birth: Date.now(),
+      dateOfBirth: new Date(),
       salary: 1500,
       birthPlace: 'Milano',
       image: "",
     },
     {
       name : 'Fantastic beasts',
-      birth: Date.now(),
+      dateOfBirth: new Date(),
       salary: 1300,
       birthPlace: 'Napoli',
       image: "",
@@ -32,28 +32,28 @@ export class HomeComponent implements OnInit {
 
     this.seniorWorkers =[{
       name : 'Spiderman',
-      birth: Date.now(),
+      dateOfBirth: new Date(),
       salary: 4000,
       birthPlace: 'Foggia',
       image: "",
     },
     {
       name : 'Moana',
-      birth: Date.now(),
+      dateOfBirth: new Date(),
       salary: 3500,
       birthPlace: 'Torino',
       image: "",
     },
     {
       name : 'Fantastic beasts',
-      birth: Date.now(),
+      dateOfBirth: new Date(),
       salary: 3300,
       birthPlace: 'Verona',
       image: "",
     }];
     
   }
-  juniorWorkers!: { name: string; birth: number; salary: number; birthPlace: string; image:string; }[];
-  seniorWorkers!: { name: string; birth: number; salary: number; birthPlace: string; image:string; }[];
+  juniorWorkers!: { name: string; dateOfBirth: Date; salary: number; birthPlace: string; image:string; }[];
+  seniorWorkers!: { name: string; dateOfBirth: Date; salary: number; birthPlace: string; image:string; }[];
 
 }

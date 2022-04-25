@@ -16,42 +16,42 @@ export class WorkerFilterComponent implements OnInit {
 
   workers =[{
     name : 'Spiderman',
-    birth: Date.now(),
+    dateOfBirth: new Date(),
     salary: 1000,
     birthPlace: 'Cagliari',
     image: "",
   },
   {
     name : 'Moana',
-    birth: Date.now(),
+    dateOfBirth: new Date(),
     salary: 1500,
     birthPlace: 'Milano',
     image: "",
   },
   {
     name : 'Fantastic beasts',
-    birth: Date.now(),
+    dateOfBirth: new Date(),
     salary: 1300,
     birthPlace: 'Napoli',
     image: "",
   },
   {
     name : 'Spiderman',
-    birth: Date.now(),
+    dateOfBirth: new Date(),
     salary: 4000,
     birthPlace: 'Foggia',
     image: "",
   },
   {
     name : 'Moana',
-    birth: Date.now(),
+    dateOfBirth: new Date(),
     salary: 3500,
     birthPlace: 'Torino',
     image: "",
   },
   {
     name : 'Fantastic beasts',
-    birth: Date.now(),
+    dateOfBirth: new Date(),
     salary: 3300,
     birthPlace: 'Verona',
     image: "",
@@ -63,7 +63,7 @@ export class WorkerFilterComponent implements OnInit {
     this.form = this.formBuilder.group({
        name:'',
        birthPlace:'',
-       birth:Date.now()
+       dateOfBirth:new Date(),
     });
 
     this.form.valueChanges.subscribe(values => {

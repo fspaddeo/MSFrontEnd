@@ -10,7 +10,7 @@ export class WorkerListComponent implements OnInit {
   constructor() { }
 
   @Input()
-  workers!: { name: string; birth: number; salary: number; birthPlace: string; image: string; }[];
+  workers!: { name: string; dateOfBirth: Date; salary: number; birthPlace: string; image: string; }[];
 
   ngOnInit(): void {
   }
