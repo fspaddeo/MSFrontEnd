@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { WorkerListComponent } from './workers/worker-list/worker-list.component';
 import { GenericListComponent } from './utilities/generic-list/generic-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {ReactiveFormsModule} from '@angular/forms'
+import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 
 import {MaterialModule} from './material/material.module';
 import { MenuComponent } from './menu/menu.component';
@@ -17,6 +17,8 @@ import { CreateSkillComponent } from './skills/create-skill/create-skill.compone
 import { IndexSkillsComponent } from './skills/index-skills/index-skills.component';
 import { EditWorkerComponent } from './workers/edit-worker/edit-worker.component';
 import { CreateWorkerComponent } from './workers/create-worker/create-worker.component';
+import { FormSkillComponent } from './skills/form-skill/form-skill.component';
+import { EditSkillComponent } from './skills/edit-skill/edit-skill.component';
 
 @NgModule({
   declarations: [
@@ -31,13 +33,16 @@ import { CreateWorkerComponent } from './workers/create-worker/create-worker.com
     CreateSkillComponent,
     EditWorkerComponent,
     CreateWorkerComponent,
+    FormSkillComponent,
+    EditSkillComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
