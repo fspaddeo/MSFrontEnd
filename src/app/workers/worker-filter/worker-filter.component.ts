@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { listItem } from 'src/app/utilities/listItem.model';
+import { DropdownService } from '../dropdown.service';
 import { WorkerCreationDto, WorkerDto } from '../workers.model';
 import { WorkersService } from '../workers.service';
 
@@ -10,11 +12,15 @@ import { WorkersService } from '../workers.service';
 })
 export class WorkerFilterComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder, private workerService: WorkersService) { }
+  constructor(private formBuilder: FormBuilder, 
+    private workerService: WorkersService,
+    private dropdownService: DropdownService) { }
 
   form!: FormGroup;
 
   cities=[{id:1, name:'Cagliari'}, {id:2, name:'Milano'}, {id:3, name:'Napoli'}]
+
+  universities: listItem[] = [];
 
   originalWorkers: WorkerDto[] =  [];
 
@@ -22,10 +28,14 @@ export class WorkerFilterComponent implements OnInit {
 
   ngOnInit(): void {
     this.workerService.getAll().subscribe(workers =>{
-      this.originalWorkers = workers;
+      this.workers = workers;
     });
 
-    this.workers = this.originalWorkers;
+    this.dropdownService.getAllUniversities().subscribe(universities =>{
+      this.universities = universities.sort().map((x, idx) => ({id: idx, name:x}));
+    });
+
+    this.originalWorkers = this.workers;
 
     this.form = this.formBuilder.group({
        name:'',
