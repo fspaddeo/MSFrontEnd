@@ -17,44 +17,44 @@ export class WorkerFilterComponent implements OnInit {
   workers =[{
     name : 'Spiderman',
     dateOfBirth: new Date(),
-    salary: 1000,
     birthPlace: 'Cagliari',
     image: "",
+    skillIds: []
   },
   {
     name : 'Moana',
     dateOfBirth: new Date(),
-    salary: 1500,
+    skillIds: [],
     birthPlace: 'Milano',
     image: "",
   },
   {
     name : 'Fantastic beasts',
     dateOfBirth: new Date(),
-    salary: 1300,
     birthPlace: 'Napoli',
     image: "",
+    skillIds: []
   },
   {
     name : 'Spiderman',
     dateOfBirth: new Date(),
-    salary: 4000,
     birthPlace: 'Foggia',
     image: "",
+    skillIds: []
   },
   {
     name : 'Moana',
     dateOfBirth: new Date(),
-    salary: 3500,
     birthPlace: 'Torino',
     image: "",
+    skillIds: []
   },
   {
     name : 'Fantastic beasts',
     dateOfBirth: new Date(),
-    salary: 3300,
     birthPlace: 'Verona',
     image: "",
+    skillIds: []
   }];
 
   originalWorkers = this.workers;

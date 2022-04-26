@@ -12,8 +12,15 @@
         <mat-datepicker #picker ></mat-datepicker>
     </mat-form-field>
 
+    <h3>Seleziona le skills</h3>
+
+    <app-multiple-selector [SelectedItems]="selectedSkills" [NonSelectedItems]="nonSelectedSkills"></app-multiple-selector>
+
     <div>
         <button mat-flat-button color="primary" [disabled]="form.invalid" (click)="saveChanges()">Salva</button>
         <a mat-stroked-button>Annulla </a>
     </div>
+
+    
 </form>
+

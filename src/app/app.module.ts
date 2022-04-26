@@ -21,6 +21,7 @@ import { FormSkillComponent } from './skills/form-skill/form-skill.component';
 import { EditSkillComponent } from './skills/edit-skill/edit-skill.component';
 import { WorkerFilterComponent } from './workers/worker-filter/worker-filter.component';
 import { FormWorkerComponent } from './workers/form-worker/form-worker.component';
+import { MultipleSelectorComponent } from './utilities/multiple-selector/multiple-selector.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { FormWorkerComponent } from './workers/form-worker/form-worker.component
     EditSkillComponent,
     WorkerFilterComponent,
     FormWorkerComponent,
+    MultipleSelectorComponent,
   ],
   imports: [
     BrowserModule,

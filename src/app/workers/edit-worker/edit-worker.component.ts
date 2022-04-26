@@ -11,7 +11,7 @@ export class EditWorkerComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute ) { }
 
-  model: workerCreationDTO = {name: 'Filippo', dateOfBirth: new Date()};
+  model: workerCreationDTO = {name: 'Filippo', dateOfBirth: new Date(), skillIds:[], birthPlace:'Cagliari', image:''};
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params =>{

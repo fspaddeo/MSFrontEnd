@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { workerCreationDTO } from '../workers/workers.model';
 
 @Component({
   selector: 'app-home',
@@ -11,49 +12,49 @@ export class HomeComponent implements OnInit {
     this.juniorWorkers =[{
       name : 'Spiderman',
       dateOfBirth: new Date(),
-      salary: 1000,
       birthPlace: 'Cagliari',
       image: "",
+      skillIds: []
     },
     {
       name : 'Moana',
       dateOfBirth: new Date(),
-      salary: 1500,
       birthPlace: 'Milano',
       image: "",
+      skillIds: []
     },
     {
       name : 'Fantastic beasts',
       dateOfBirth: new Date(),
-      salary: 1300,
       birthPlace: 'Napoli',
       image: "",
+      skillIds: []
     }];
 
     this.seniorWorkers =[{
       name : 'Spiderman',
       dateOfBirth: new Date(),
-      salary: 4000,
       birthPlace: 'Foggia',
       image: "",
+      skillIds: []
     },
     {
       name : 'Moana',
       dateOfBirth: new Date(),
-      salary: 3500,
       birthPlace: 'Torino',
       image: "",
+      skillIds: []
     },
     {
       name : 'Fantastic beasts',
       dateOfBirth: new Date(),
-      salary: 3300,
       birthPlace: 'Verona',
       image: "",
+      skillIds: []
     }];
     
   }
-  juniorWorkers!: { name: string; dateOfBirth: Date; salary: number; birthPlace: string; image:string; }[];
-  seniorWorkers!: { name: string; dateOfBirth: Date; salary: number; birthPlace: string; image:string; }[];
+  juniorWorkers!: workerCreationDTO[];
+  seniorWorkers!: workerCreationDTO[];
 
 }
