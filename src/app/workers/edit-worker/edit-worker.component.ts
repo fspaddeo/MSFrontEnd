@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { workerCreationDTO } from '../workers.model';
+import { WorkerCreationDto } from '../workers.model';
 
 @Component({
   selector: 'app-edit-worker',
@@ -11,16 +11,14 @@ export class EditWorkerComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute ) { }
 
-  model: workerCreationDTO = {name: 'Filippo', dateOfBirth: new Date(), skillIds:[], birthPlace:'Cagliari', image:''};
-
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params =>{
       alert(params['code']);
     })
   }
 
-  saveChanges(workerCreationDTO: workerCreationDTO){
-    console.log(workerCreationDTO);
+  saveChanges(workerCreationDto: WorkerCreationDto){
+    console.log(workerCreationDto);
   }
 
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { WorkerCreationDto, WorkerDto } from '../workers.model';
+import { WorkersService } from '../workers.service';
 
 @Component({
   selector: 'app-worker-filter',
@@ -8,58 +10,23 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class WorkerFilterComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private workerService: WorkersService) { }
 
   form!: FormGroup;
 
   cities=[{id:1, name:'Cagliari'}, {id:2, name:'Milano'}, {id:3, name:'Napoli'}]
 
-  workers =[{
-    name : 'Spiderman',
-    dateOfBirth: new Date(),
-    birthPlace: 'Cagliari',
-    image: "",
-    skillIds: []
-  },
-  {
-    name : 'Moana',
-    dateOfBirth: new Date(),
-    skillIds: [],
-    birthPlace: 'Milano',
-    image: "",
-  },
-  {
-    name : 'Fantastic beasts',
-    dateOfBirth: new Date(),
-    birthPlace: 'Napoli',
-    image: "",
-    skillIds: []
-  },
-  {
-    name : 'Spiderman',
-    dateOfBirth: new Date(),
-    birthPlace: 'Foggia',
-    image: "",
-    skillIds: []
-  },
-  {
-    name : 'Moana',
-    dateOfBirth: new Date(),
-    birthPlace: 'Torino',
-    image: "",
-    skillIds: []
-  },
-  {
-    name : 'Fantastic beasts',
-    dateOfBirth: new Date(),
-    birthPlace: 'Verona',
-    image: "",
-    skillIds: []
-  }];
+  originalWorkers: WorkerDto[] =  [];
 
-  originalWorkers = this.workers;
+  workers: WorkerDto[] =  [];
 
   ngOnInit(): void {
+    this.workerService.getAll().subscribe(workers =>{
+      this.originalWorkers = workers;
+    });
+
+    this.workers = this.originalWorkers;
+
     this.form = this.formBuilder.group({
        name:'',
        birthPlace:'',
@@ -75,7 +42,6 @@ export class WorkerFilterComponent implements OnInit {
 
   filterWorkers(values: any){
     if(values.name){
-      console.log('Filter name');
       this.workers = this.workers.filter(worker=> worker.name.indexOf(values.name) !== -1)
     }
   }

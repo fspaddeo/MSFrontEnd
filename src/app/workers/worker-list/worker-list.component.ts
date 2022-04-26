@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { workerCreationDTO } from '../workers.model';
+import { WorkerCreationDto } from '../workers.model';
 
 @Component({
   selector: 'app-worker-list',
@@ -11,7 +11,7 @@ export class WorkerListComponent implements OnInit {
   constructor() { }
 
   @Input()
-  workers!: workerCreationDTO[];
+  workers!: WorkerCreationDto[];
 
   ngOnInit(): void {
   }

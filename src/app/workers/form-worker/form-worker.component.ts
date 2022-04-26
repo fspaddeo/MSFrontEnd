@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { multipleSelectorModel } from 'src/app/utilities/multiple-selector/multiple-selector.model';
-import { workerCreationDTO } from '../workers.model';
+import { WorkerCreationDto } from '../workers.model';
 
 @Component({
   selector: 'app-form-worker',
@@ -15,10 +15,10 @@ export class FormWorkerComponent implements OnInit {
   form!: FormGroup;
 
   @Input()
-  model!: workerCreationDTO;
+  model!: WorkerCreationDto;
 
   @Output()
-  onSavedChanges = new EventEmitter<workerCreationDTO>();
+  onSavedChanges = new EventEmitter<WorkerCreationDto>();
 
   nonSelectedSkills: multipleSelectorModel[] = [
     {key:1, value:'C#'},

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { workerCreationDTO } from '../workers.model';
+import { WorkerCreationDto } from '../workers.model';
 
 @Component({
   selector: 'app-create-worker',
@@ -13,7 +13,7 @@ export class CreateWorkerComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  saveChanges(workerCreationDTO: workerCreationDTO){
-    console.log(workerCreationDTO);
+  saveChanges(workerCreationDto: WorkerCreationDto){
+    console.log(workerCreationDto);
   }
 }
