@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { LoginPageComponent } from './login/login-page/login-page.component';
 import { CreateSkillComponent } from './skills/create-skill/create-skill.component';
 import { EditSkillComponent } from './skills/edit-skill/edit-skill.component';
 import { IndexSkillsComponent } from './skills/index-skills/index-skills.component';
@@ -9,7 +10,7 @@ import { EditWorkerComponent } from './workers/edit-worker/edit-worker.component
 import { WorkerFilterComponent } from './workers/worker-filter/worker-filter.component';
 
 const routes: Routes = [
-  {path:'', component:HomeComponent},
+  {path:'', component:LoginPageComponent},
 
   {path:'workers/create', component:CreateWorkerComponent},
   {path:'workers/edit/:code', component:EditWorkerComponent},

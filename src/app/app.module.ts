@@ -23,6 +23,8 @@ import { EditSkillComponent } from './skills/edit-skill/edit-skill.component';
 import { WorkerFilterComponent } from './workers/worker-filter/worker-filter.component';
 import { FormWorkerComponent } from './workers/form-worker/form-worker.component';
 import { MultipleSelectorComponent } from './utilities/multiple-selector/multiple-selector.component';
+import { LoginPageComponent } from './login/login-page/login-page.component';
+import { LoginFormComponent } from './login/login-form/login-form.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { MultipleSelectorComponent } from './utilities/multiple-selector/multipl
     WorkerFilterComponent,
     FormWorkerComponent,
     MultipleSelectorComponent,
+    LoginPageComponent,
+    LoginFormComponent,
   ],
   imports: [
     BrowserModule,
