@@ -18,9 +18,10 @@ export class WorkerFilterComponent implements OnInit {
 
   form!: FormGroup;
 
-  cities=[{id:1, name:'Cagliari'}, {id:2, name:'Milano'}, {id:3, name:'Napoli'}]
-
   universities: listItem[] = [];
+  languages: listItem[] = [];
+  softSkills: listItem[] = [];
+  techSkills: listItem[] = [];
 
   originalWorkers: WorkerDto[] =  [];
 
@@ -29,35 +30,78 @@ export class WorkerFilterComponent implements OnInit {
   ngOnInit(): void {
     this.workerService.getAll().subscribe(workers =>{
       this.workers = workers;
+      this.originalWorkers = this.workers;
     });
 
-    this.dropdownService.getAllUniversities().subscribe(universities =>{
-      this.universities = universities.sort().map((x, idx) => ({id: idx, name:x}));
+    this.dropdownService.getAllFields().subscribe(allFields =>{
+      this.universities = allFields.universities.sort().map((x, idx) => ({id: idx, name:x}));
+      this.languages = allFields.languages.sort().map((x, idx) => ({id: idx, name:x}));
+      this.softSkills = allFields.softSkills.sort().map((x, idx) => ({id: idx, name:x}));
+      this.techSkills = allFields.techSkills.sort().map((x, idx) => ({id: idx, name:x}));
     });
-
-    this.originalWorkers = this.workers;
 
     this.form = this.formBuilder.group({
        name:'',
-       birthPlace:'',
-       dateOfBirth:new Date(),
+       university:'',
+       language:'',
+       softSkill:'',
+       techSkill:'',
     });
 
     this.form.valueChanges.subscribe(values => {
       this.workers = this.originalWorkers;
-      this.filterWorkers(values);
-    })
 
+      //Remove null fields
+      Object.keys(values).forEach(k => (!values[k] && values[k] !== undefined) && delete values[k]);
+      this.filterWorkers(values);
+    });
   }
 
   filterWorkers(values: any){
-    if(values.name){
-      this.workers = this.workers.filter(worker=> worker.name.indexOf(values.name) !== -1)
+    this.workers= this.workers.filter(item => this.filterName(item, values['name']) &&
+        this.filterUniversities(item, values['university']) &&
+        this.filterLanguage(item, values['language']) &&
+        this.filterTechSkill(item, values['techSkill']) &&
+        this.filterSoftSkill(item, values['softSkill']));
+  }
+
+  filterName(worker: WorkerDto, value: string | null): boolean{
+    if(value){
+      return worker.name.toLowerCase().indexOf(value.toLowerCase()) !== -1;
     }
+    return true;
+  }
+
+  filterUniversities(worker: WorkerDto, value: string | null): boolean{
+    if(value){
+      return worker.studyHistory.map(sh=>sh.school).includes(value);
+    }
+    return true;
+  }
+
+  filterLanguage(worker: WorkerDto, value: string | null): boolean{
+    if(value){
+      return worker.skills.knownLanguages.map(kl=>kl.skill).includes(value);
+    }
+    return true;
+  }
+
+  filterSoftSkill(worker: WorkerDto, value: string | null): boolean{
+    if(value){
+      return worker.skills.softSkills.map(ss=>ss.skill).includes(value);
+    }
+    return true;
+  }
+
+  filterTechSkill(worker: WorkerDto, value: string | null): boolean{
+    if(value){
+      return worker.skills.techSkills.map(ts=>ts.skill).includes(value);
+    }
+    return true;
   }
 
   clearForm(){
     this.form.reset();
+    this.workers = this.originalWorkers;
   }
-
 }

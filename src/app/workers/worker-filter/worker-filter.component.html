@@ -7,9 +7,30 @@
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-        <mat-label>Città</mat-label>
-        <mat-select formControlName="birthPlace">
-            <mat-option *ngFor="let university of universities" [value]="university.id">{{university.name}}</mat-option>
+        <mat-label>Università</mat-label>
+        <mat-select formControlName="university">
+            <mat-option *ngFor="let university of universities" [value]="university.name">{{university.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Lingue</mat-label>
+        <mat-select formControlName="language">
+            <mat-option *ngFor="let language of languages" [value]="language.name">{{language.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>TechSkills</mat-label>
+        <mat-select formControlName="techSkill">
+            <mat-option *ngFor="let techSkill of techSkills" [value]="techSkill.name">{{techSkill.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>SoftSkills</mat-label>
+        <mat-select formControlName="softSkill">
+            <mat-option *ngFor="let softSkill of softSkills" [value]="softSkill.name">{{softSkill.name}}</mat-option>
         </mat-select>
     </mat-form-field>
     <div>
