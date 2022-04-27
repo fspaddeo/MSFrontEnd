@@ -1,29 +1,41 @@
 .worker-container{
     margin-right: 2%;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     text-align: center;
+    border-color: blueviolet;
+    border-style:outset;
+    border-radius: 2%;
+    padding: 5px;
+    margin-top: 3px;
+    border-width: 1px;
 }
 
 .workers-container{
-    display: flex;
+    display:flex;
     flex-direction: row;
     flex-wrap: wrap;
+
     align-items: center;
 }
 
 p{
     max-width: 225px;
-    height: 44px;
-    font-size: 15px;
+    height: 13px;
+    font-size: 13px;
+    font-weight:normal;
+}
+
+.surname{
     font-weight: bold;
-    margin-bottom: 0;
 }
 
 img{
+    margin-top: 15%;
     width: 100px;
     height: 100px;
 }
 
 button{
+    margin-top: 5px;
     margin-left:1em; 
 }
