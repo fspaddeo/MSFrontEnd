@@ -1,26 +1,29 @@
-<form [formGroup]="form">
-    <mat-form-field appearance="outline">
-        <mat-label>Name</mat-label>
-        <input formControlName="name" matInput/>
-        <mat-error>Il nome è obbligatorio.</mat-error>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-        <mat-label>Data di nascita</mat-label>
-        <input formControlName="dateOfBirth" matInput [matDatepicker]="picker"/>
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker ></mat-datepicker>
-    </mat-form-field>
-
-    <h3>Seleziona le skills</h3>
-
-    <app-multiple-selector [SelectedItems]="selectedSkills" [NonSelectedItems]="nonSelectedSkills"></app-multiple-selector>
-
-    <div>
-        <button mat-flat-button color="primary" [disabled]="form.invalid" (click)="saveChanges()">Salva</button>
-        <a mat-stroked-button>Annulla </a>
-    </div>
-
+<ng-container *ngIf="model">
+    <form [formGroup]="form">
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input formControlName="name" matInput/>
+            <mat-error>Il nome è obbligatorio.</mat-error>
+        </mat-form-field>
     
-</form>
-
+        <mat-form-field appearance="outline">
+            <mat-label>Data di nascita</mat-label>
+            <input formControlName="dateOfBirth" matInput [matDatepicker]="picker"/>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker ></mat-datepicker>
+        </mat-form-field>
+    
+        <h3>Seleziona le skills</h3>
+    
+        <app-multiple-selector [SelectedItems]="selectedSkills" [NonSelectedItems]="nonSelectedSkills"></app-multiple-selector>
+    
+        <div>
+            <button mat-flat-button color="primary" [disabled]="form.invalid" (click)="saveChanges()">Salva</button>
+            <a mat-stroked-button>Annulla </a>
+        </div>
+    
+        
+    </form>
+    
+    
+</ng-container>

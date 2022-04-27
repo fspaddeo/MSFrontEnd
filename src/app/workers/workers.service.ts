@@ -11,9 +11,14 @@ export class WorkersService {
 
   constructor(private http: HttpClient) { }
 
-  private apiUrl = environment.apiURL + '/workers'
+  private apiWorkersUrl = environment.apiURL + '/workers'
+  private apiWorkerUrl = environment.apiURL + '/worker'
 
   getAll(): Observable<WorkerDto[]>{
-    return this.http.get<WorkerDto[]>(this.apiUrl);
+    return this.http.get<WorkerDto[]>(this.apiWorkersUrl);
+  }
+
+  getOne(code: number): Observable<WorkerDto>{
+    return this.http.get<WorkerDto>(this.apiWorkerUrl +`/${code}`);
   }
 }

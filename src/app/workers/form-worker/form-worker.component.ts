@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { multipleSelectorModel } from 'src/app/utilities/multiple-selector/multiple-selector.model';
-import { WorkerCreationDto } from '../workers.model';
+import { WorkerCreationDto, WorkerDto } from '../workers.model';
 
 @Component({
   selector: 'app-form-worker',
@@ -15,7 +15,7 @@ export class FormWorkerComponent implements OnInit {
   form!: FormGroup;
 
   @Input()
-  model!: WorkerCreationDto;
+  model!: WorkerDto;
 
   @Output()
   onSavedChanges = new EventEmitter<WorkerCreationDto>();
@@ -31,7 +31,7 @@ export class FormWorkerComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      name:['',{
+      name :['',{
         validators:[Validators.required]
       }],
       dateOfBirth: '',
