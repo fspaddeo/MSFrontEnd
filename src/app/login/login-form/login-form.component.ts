@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { userLoginDto } from 'src/app/users/user.model';
 
 @Component({
   selector: 'app-login-form',
@@ -13,7 +14,7 @@ export class LoginFormComponent implements OnInit {
   form!: FormGroup;
 
   @Output()
-  onSubmit = new EventEmitter<{'username': string, 'password':string}>();
+  onSubmit = new EventEmitter<userLoginDto>();
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
