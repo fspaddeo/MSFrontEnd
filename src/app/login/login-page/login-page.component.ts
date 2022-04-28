@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JwtTokenService } from 'src/app/authentication/jwt-token.service';
 import { userLoginDto } from 'src/app/users/user.model';
 import { UserService } from 'src/app/users/user.service';
 
@@ -9,22 +10,22 @@ import { UserService } from 'src/app/users/user.service';
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private tokenService: JwtTokenService) { }
 
   ngOnInit(): void {
   }
+
+  
 
   login(credentials: userLoginDto){
     this.userService.login(credentials).subscribe(
       (_response: any) => {
           // Also tried _response.headers.init();
           console.log(_response.status);
-          const header = _response.headers.get('X-Token');
-          console.log(header);
+          const token = _response.headers.get('X-Token');
+          this.tokenService.setToken(token);
+          console.log(this.tokenService.getExpiryTime());
         });
-    
-    //https://www.syncfusion.com/blogs/post/best-practices-for-jwt-authentication-in-angular-apps.aspx
-    //https://stackoverflow.com/questions/69211872/best-way-to-store-auth-token-in-angular-app
   }
 
 }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +25,7 @@ import { FormWorkerComponent } from './workers/form-worker/form-worker.component
 import { MultipleSelectorComponent } from './utilities/multiple-selector/multiple-selector.component';
 import { LoginPageComponent } from './login/login-page/login-page.component';
 import { LoginFormComponent } from './login/login-form/login-form.component';
+import { TokenInterceptorService } from './authentication/token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,7 @@ import { LoginFormComponent } from './login/login-form/login-form.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

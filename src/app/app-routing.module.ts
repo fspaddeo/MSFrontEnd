@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthorizeGuardService } from './authentication/authorize-guard.service';
 import { HomeComponent } from './home/home.component';
 import { LoginPageComponent } from './login/login-page/login-page.component';
 import { CreateSkillComponent } from './skills/create-skill/create-skill.component';
@@ -14,7 +15,7 @@ const routes: Routes = [
 
   {path:'workers/create', component:CreateWorkerComponent},
   {path:'workers/edit/:code', component:EditWorkerComponent},
-  {path:'workers/filter', component:WorkerFilterComponent},
+  {path:'workers/filter', component:WorkerFilterComponent, canActivate: [AuthorizeGuardService]},
 
   {path:'skills', component:IndexSkillsComponent},
   {path:'skills/create', component:CreateSkillComponent},
